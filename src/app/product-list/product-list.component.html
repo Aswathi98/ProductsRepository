@@ -1,0 +1,16 @@
+ <table class="table">
+  <thead>
+    <tr>
+      <th>Product List</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+    <td>
+    <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+    </td>
+      
+    </tr>
+  </tbody>
+</table> 
+

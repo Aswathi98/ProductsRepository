@@ -1,0 +1,12 @@
+<p> Product:</p>
+<div *ngIf="product$ | async as product">
+  <p>Id: {{product.id}}</p>
+  <p>Name: {{ product.name }}</p>
+  <p>Entry Date: {{ product.entryDate | date }}</p>
+  <p>Price for today(incl. reduction): {{ product.price | currency }}</p>
+</div>
+
+<!-- Add a  message if no product is found -->
+<div *ngIf="!(product$ | async)">
+  <p>Product details not available.</p>
+</div>
