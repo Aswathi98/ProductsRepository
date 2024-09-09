@@ -1,0 +1,6 @@
+@DeliVeggieApplication_HostAddress = http://localhost:5188
+
+GET {{DeliVeggieApplication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,38 @@
+
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  deliveggieapplication:
+    build:
+      context: ./DeliVeggieApplication
+    container_name: deliveggieapplication
+    ports:
+      - "44361:80"
+    depends_on:
+      - mongodb
+  
+  acelotgateway:
+    build:
+      context: ./AcelotGateway
+    container_name: acelotgateway
+    ports:
+      - "7134:80"
+    depends_on:
+      - mongodb
+      
+  deliveggieapplicationnewtest:
+    build: .
+    command: ["dotnet", "test"]
+    depends_on:
+      - deliveggieapplication
+      - mongodb
+  
+volumes:
+  mongodb_data:

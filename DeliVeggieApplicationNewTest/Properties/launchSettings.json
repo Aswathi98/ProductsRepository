@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DeliVeggieApplicationNewTest": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
